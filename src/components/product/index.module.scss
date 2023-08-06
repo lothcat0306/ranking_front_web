@@ -1,0 +1,51 @@
+.article {
+  margin: 10px auto;
+}
+
+.article__heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.product__main {
+  border: 1.2px solid rgba(135, 135, 135, 0.5);
+  margin: 0 20px 20px 20px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.article__title {
+  flex: 4;
+  margin-right: 5px;
+}
+
+.article__time {
+  opacity: 0.5;
+}
+
+.amazon_img {
+  object-fit: contain;
+  width: 10rem;
+  border-radius: 5px;
+  max-height: 5rem;
+  flex: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product__links {}
+
+@media screen and (max-width:600px) {
+  .article__heading {
+    h1 {
+      display: inline;
+      width: 90%;
+    }
+  }
+
+  .article__img {
+    max-height: 70px;
+  }
+}
