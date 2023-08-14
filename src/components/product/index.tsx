@@ -1,5 +1,7 @@
 import styles from "./index.module.scss";
 import { ProductsData } from "../types";
+import Link from "next/link";
+import Articles from "../article";
 
 type Props = {
   title: string;
@@ -8,20 +10,26 @@ type Props = {
 
 const Product: React.FC<Props> = ({ title, products }) => {
   return (
-    <section className={styles.article}>
+    <div className={styles.article}>
       <div className={styles.article__heading}>
         <h1>{title.charAt(0).toUpperCase() + title.slice(1).toLowerCase()}</h1>
       </div>
-      {products.map((product) => {
+      {products.map((product, index) => {
         return (
           <article className={styles.product__main}>
-            <p>{product.total_point}ポイント</p>
-            <a href="">
-              <div className={styles.article__title}>
-                <p>{product.name}</p>
+            <div className={styles.product_container}>
+              <div className={styles.product_head_box}>
+                <div>
+                  <p className={styles.product_rank_num}>{index + 1}位</p>
+                  <p>{product.total_point}ポイント</p>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/61QZq7VucIL._AC_SY355_.jpg" alt="ガジェット画像" />
               </div>
-            </a>
-            <div className={styles.product__links}>
+              <Link href={`/${product.id}`}>
+                <div className={styles.article__title}>
+                  <p>{product.name}</p>
+                </div>
+              </Link>
               <a href={product.amazon_url}>
                 <img
                   src={'/images/amazon.jpg'}
@@ -29,14 +37,12 @@ const Product: React.FC<Props> = ({ title, products }) => {
                   alt={`${product.name}`}
                 />
               </a>
-              <a href={'/'}>
-                詳細
-              </a>
             </div>
+            <Articles productId={product.id}></Articles>
           </article>
         );
       })}
-    </section >
+    </div >
   );
 };
 

@@ -13,16 +13,6 @@
   margin: 0 20px 20px 20px;
   padding: 15px;
   border-radius: 10px;
-  text-align: center;
-}
-
-.article__title {
-  flex: 4;
-  margin-right: 5px;
-}
-
-.article__time {
-  opacity: 0.5;
 }
 
 .amazon_img {
@@ -35,17 +25,21 @@
   margin-right: auto;
 }
 
-.product__links {}
+.product_container {
+  text-align: center;
+}
 
-@media screen and (max-width:600px) {
-  .article__heading {
-    h1 {
-      display: inline;
-      width: 90%;
-    }
-  }
+.product_head_box {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .article__img {
-    max-height: 70px;
-  }
+.product_head_box img {
+  max-width: 15rem;
+}
+
+.product_rank_num {
+  margin: 0rem 1.5rem 0rem 1.5rem;
+  font-size: 50px;
 }
