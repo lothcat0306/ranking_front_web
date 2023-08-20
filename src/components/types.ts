@@ -6,6 +6,10 @@ export type ProductsData = {
   total_point: number;
 };
 
+export type ProductsTypesData = {
+  id: number, name: string
+}
+
 export type ArticleData = {
   id: number;
   product_id: number;

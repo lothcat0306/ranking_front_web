@@ -1,33 +1,37 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-
 import 'react-tabs/style/react-tabs.css';
 
-import { useState } from 'react'
-import { css } from '@emotion/react'
+import Product from "../product";
+import { ProductsTypesData } from '../types';
+
+import styles from "./index.module.scss";
 
 type TabProps = {
-  tabs: string[]
+  product_types: ProductsTypesData[]
 }
 
-const product_types = ["ディスプレイ", "キーボード", "マウス"]
-
-const TabComponent = ({ tabs }: TabProps) => {
-  const [activeTab, setActiveTab] = useState(tabs[0])
+const TabComponent = ({ product_types }: TabProps) => {
   return (
-    <Tabs>
-      <TabList>
+    <div>
+      <Tabs>
+        <TabList className={styles.tab_box}>
+          {product_types.map((product_type) => {
+            return (
+              <Tab>{product_type.name}</Tab>
+            );
+          })}
+        </TabList>
         {product_types.map((product_type) => {
           return (
-            <Tab>{product_type}</Tab>
+            <TabPanel>
+              <div>
+                <Product title={`${product_type.name}のランキング`} product_type_id={product_type.id} />
+              </div>
+            </TabPanel>
           );
         })}
-      </TabList>
-      {product_types.map((product_type) => {
-        return (
-          <TabPanel>{product_type}です</TabPanel>
-        )
-      })}
-    </Tabs>
+      </Tabs >
+    </div>
   )
 }
 
