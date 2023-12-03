@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import styles from "./index.module.scss";
 import { ArticleData } from "../types";
-import Link from "next/link";
 import { getArticleDataByProductId } from "@/lib/products";
 
 type Props = {
   productId: number;
+  limit: number;
 }
 
-const limit = 10;
 const offset = 0;
 
-const Articles: React.FC<Props> = ({ productId }) => {
+const Articles: React.FC<Props> = ({ productId, limit }) => {
   const [articles, setArticles] = useState<ArticleData[]>();
   useEffect(() => {
     (async () => {
@@ -22,9 +21,9 @@ const Articles: React.FC<Props> = ({ productId }) => {
   return (
     <ul>
       <div className={styles.article}>
-        {articles?.map((article) => {
+        {articles?.map((article, index) => {
           return (
-            <li className={styles.article__container}>
+            <li key={index} className={styles.article__container}>
               <div key={article.id}>
                 <div className={styles.product__main}>
                   <div className={styles.article__main}>

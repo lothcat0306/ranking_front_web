@@ -1,0 +1,14 @@
+.pagenation__inline {
+  text-align: center;
+
+  ul {
+    display: inline;
+    text-align: center;
+    list-style-type: none;
+
+    li {
+      display: inline;
+      padding-right: 4rem;
+    }
+  }
+}

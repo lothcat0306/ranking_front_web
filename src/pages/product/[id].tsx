@@ -1,25 +1,26 @@
-import { getAllProductId, getProductDataById } from '@/lib/products';
-import Layout from '../components/layout/layout';
+import { getAllProductId, getAllProductTypes, getProductDataById } from '@/lib/products';
+import Layout from '../../components/layout/layout';
 import type { GetStaticProps, NextPage } from 'next';
-import { ParsedUrlQuery } from 'node:querystring';
-import { ProductsData } from '@/components/types';
-import Product from '@/components/product';
+import { ProductsData, ProductsTypesData } from '@/components/types';
 import Articles from '@/components/article';
+import TabComponent from '@/components/tabs';
 
 
 // 1. Paramsの型を定義し、ParsedUrlQueryをextendsする
 type Props = {
   product: ProductsData;
+  product_types: ProductsTypesData[]
 };
 
-const PostPage: NextPage<Props> = ({ product }) => {
+const PostPage: NextPage<Props> = ({ product, product_types }) => {
   return (
     <Layout>
-      <p>{product.id}</p>
+      <TabComponent product_types={product_types} page_type='detail'></TabComponent>
       <p>商品名: {product.name}</p>
       <p>総ポイント:{product.total_point}</p>
-      <Articles productId={product.id}></Articles>
-      {/* <Product title="おさせろ！" products={products} /> */}
+      <img src="https://m.media-amazon.com/images/I/61QZq7VucIL._AC_SY355_.jpg" alt="ガジェット画像" />
+      <p>記事一覧</p>
+      <Articles productId={product.id} limit={20}></Articles>
     </Layout>
   );
 }
@@ -32,10 +33,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
   const allProductsData: ProductsData[] = await getProductDataById(Number(params.id));
   const product = allProductsData[0]
-  console.log(allProductsData[0].id)
+  const product_types = await getAllProductTypes();
   return {
     props: {
       product,
+      product_types
     }
   }
 }

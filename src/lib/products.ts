@@ -16,6 +16,7 @@ export async function getProductsDataByProductTypeId(product_type_id: number, li
   const endpointPath = `products`
   const apiURL = process.env.NEXT_PUBLIC_API_URL + endpointPath
   let products;
+  console.log('apiURL:', `${apiURL}/${product_type_id}?limit=${limit}&offset=${offset}`)
   try {
     products = await fetch(`${apiURL}/${product_type_id}?limit=${limit}&offset=${offset}`);
   } catch (error) {
@@ -48,10 +49,10 @@ export async function getArticleDataByProductId(productId: number, limit: number
     articles = await fetch(`${apiURL}/${productId}?limit=${limit}&offset=${offset}`);
   } catch (error) {
     console.log(error);
-    throw new Error('APIからのデータ取得に失敗しました')
+    throw new Error('APIからのデータ取得に失敗しました');
   }
   if (!articles) {
-    throw new Error('APIからのデータ取得に失敗しました')
+    throw new Error('APIからのデータ取得に失敗しました');
   }
   const data = await articles?.json();
   return data;
@@ -59,12 +60,12 @@ export async function getArticleDataByProductId(productId: number, limit: number
 
 export async function getAllProductId(): Promise<{ id: number }[]> {
   const endpointPath = 'products_ids'
-  const apiURL = process.env.API_URL + endpointPath
+  const apiURL = process.env.NEXT_PUBLIC_API_URL + endpointPath
   let response;
   try {
     response = await fetch(`${apiURL}`);
   } catch (error) {
-    throw new Error('APIからのデータ取得に失敗しました')
+    throw new Error('APIからのデータ取得に失敗しました');
   }
   const data = await response.json();
   if (!data) {
@@ -75,12 +76,12 @@ export async function getAllProductId(): Promise<{ id: number }[]> {
 
 export async function getAllProductTypes(): Promise<{ id: number, name: string }[]> {
   const endpointPath = 'products_types'
-  const apiURL = process.env.API_URL + endpointPath
+  const apiURL = process.env.NEXT_PUBLIC_API_URL + endpointPath
   let response;
   try {
     response = await fetch(`${apiURL}`);
   } catch (error) {
-    throw new Error('APIからのデータ取得に失敗しました')
+    throw new Error('APIからのデータ取得に失敗しました');
   }
   const data = await response.json();
   if (!data) {
