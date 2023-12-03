@@ -72,7 +72,7 @@ const TabComponent = ({ product_types, page_type }: TabProps) => {
   } else {
     return (
       <Tabs onSelect={onSelect} selectedIndex={selectedIndex}>
-        <TabList className={styles.tab_box}>
+        <TabList className={styles.tab__box}>
           {product_types.map((product_type, index) => {
             return (
               <Tab key={index}>
