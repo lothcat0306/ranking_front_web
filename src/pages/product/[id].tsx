@@ -16,10 +16,13 @@ const PostPage: NextPage<Props> = ({ product, product_types }) => {
   return (
     <Layout>
       <TabComponent product_types={product_types} page_type='detail'></TabComponent>
-      <p>商品名: {product.name}</p>
-      <p>総ポイント:{product.total_point}</p>
-      <img src="https://m.media-amazon.com/images/I/61QZq7VucIL._AC_SY355_.jpg" alt="ガジェット画像" />
-      <p>記事一覧</p>
+      <h2>商品名</h2>
+      <p>{product.name}</p>
+      <h2>総ポイント</h2>
+      <p>{product.total_point}</p>
+      <h2>商品画像</h2>
+      <img src={product.img_url} alt="ガジェット画像" />
+      <h2>記事一覧</h2>
       <Articles productId={product.id} limit={20}></Articles>
     </Layout>
   );
