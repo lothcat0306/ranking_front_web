@@ -2,6 +2,15 @@
   flex: 6;
 }
 
+.about__main {
+  max-width: 36rem;
+  margin: 3rem auto 6rem;
+}
+
+.about__main__text {
+  text-align: justify;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
