@@ -1,0 +1,19 @@
+@media screen and (min-width: 767px) {
+  .detail__main {
+    border: 1.2px solid rgba(135, 135, 135, 0.5);
+    margin: 0 10% 2% 10%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: aliceblue;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .detail__main {
+    border: 1.2px solid rgba(135, 135, 135, 0.5);
+    margin: 0 2% 2% 2%;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: aliceblue;
+  }
+}
