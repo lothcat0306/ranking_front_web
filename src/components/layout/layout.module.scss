@@ -1,14 +1,8 @@
-.container {
-  // max-width: 36rem;
-  // padding: 0 1rem;
-  // margin: 3rem auto 6rem;
-}
-
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1cb4d3;
+  background-color: aliceblue;
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -28,7 +22,7 @@
 
   li {
     margin-right: 20px;
-    background-color: lightblue;
+    background-color: #6474fc;
     border-radius: 4px;
   }
 
@@ -43,10 +37,6 @@
   }
 }
 
-.backToHome {
-  margin: 3rem 0 0;
-}
-
 .site__description {
   font-size: 1.2rem;
   line-height: 1.2;
@@ -56,7 +46,7 @@
   text-align: center;
   padding: 1rem;
   width: 100%;
-  background-color: lightblue;
+  background-color: #6474fc;
 
   span {
     color: white;
@@ -64,7 +54,7 @@
 }
 
 .site__title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   line-height: 1.2;
   font-weight: 800;
   letter-spacing: -0.05rem;
@@ -75,4 +65,14 @@
   margin-top: 48px;
   margin-bottom: 48px;
   text-align: center;
+}
+
+@media screen and (max-width: 667px) {
+  .container {
+    min-width: 667px;
+  }
+}
+
+.container {
+  background-image: url('/images/magic-pattern.jpg');
 }
