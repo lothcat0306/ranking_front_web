@@ -11,7 +11,7 @@ type Props = {
 
 export const siteTitle = 'ガジェットランキング';
 
-const Layout: FC<Props> = ({ children, home }) => {
+const Layout: FC<Props> = ({ children }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -31,9 +31,6 @@ const Layout: FC<Props> = ({ children, home }) => {
         <p className={styles.site__description}><span>リモートワーカー向け</span><br />Google検索結果からガジェットのランキングを作成</p>
         <p className={styles.site__title}>{siteTitle}</p>
         <div className="inner">
-          {/* <div className="logo">
-            <img src="" alt="ガジェットランキング" />
-          </div> */}
           <nav>
             <ul className={styles.menu}>
               <li><Link href="/">ホームに戻る</Link></li>
