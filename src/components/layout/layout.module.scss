@@ -42,7 +42,7 @@
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: -0.05rem;
-  margin: 1rem 0;
+  margin: 0;
   text-align: center;
   padding: 1rem;
   width: 100%;
@@ -75,4 +75,8 @@
 
 .container {
   background-image: url('/images/magic-pattern.jpg');
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
 }
