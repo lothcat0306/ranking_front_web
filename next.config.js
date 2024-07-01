@@ -14,14 +14,8 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/rewrites-test',
-        has: [
-          {
-            type: 'host',
-            value: 'example.com',
-          },
-        ],
-        destination: '/',
+        source: '/example',
+        destination: 'https://example.com',
       },
     ]
   }
