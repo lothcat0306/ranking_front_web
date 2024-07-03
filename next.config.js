@@ -27,8 +27,8 @@ module.exports = {
         destination: 'https://consulsoken.com/',
       },
       {
-        source: '/rewrites/:slug*',
-        destination: 'https://consulsoken.com/:slug*',
+        source: '/rewrites/:path*/',
+        destination: 'https://consulsoken.com/:path*/',
       }
     ]
   }
