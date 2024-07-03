@@ -16,6 +16,7 @@ module.exports = {
       {
         source: '/test',
         destination: 'https://consulsoken.com/',
+        permanent: false,
       },
     ]
   }
