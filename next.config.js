@@ -27,8 +27,8 @@ module.exports = {
         destination: 'https://consulsoken.com/',
       },
       {
-        source: '/hello-world/',
-        destination: 'https://consulsoken.com/2024/02/15/hello-world/',
+        source: '/rewrites/:slug*',
+        destination: 'https://consulsoken.com/:slug*',
       }
     ]
   }
