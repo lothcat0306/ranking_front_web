@@ -14,10 +14,18 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/test',
+        source: '/redirect',
         destination: 'https://consulsoken.com/',
         permanent: false,
       },
+    ]
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/rewrites',
+        destination: 'https://consulsoken.com/',
+      }
     ]
   }
 }
