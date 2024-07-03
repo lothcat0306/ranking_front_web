@@ -11,11 +11,12 @@ module.exports = {
     // Will be available on both server and client
     NEXT_PUBLIC_API_URL: "desk-items-api.internal"
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: '/test',
         destination: 'https://consulsoken.com/',
+        permanent: true,
       },
     ]
   }
