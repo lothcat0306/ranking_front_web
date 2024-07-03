@@ -25,6 +25,10 @@ module.exports = {
       {
         source: '/rewrites',
         destination: 'https://consulsoken.com/',
+      },
+      {
+        source: '/rewrites/hello-world/',
+        destination: 'https://consulsoken.com/2024/02/15/hello-world/',
       }
     ]
   }
