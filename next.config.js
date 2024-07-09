@@ -23,10 +23,6 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/rewrites',
-        destination: 'https://consulsoken.com/',
-      },
-      {
         source: '/rewrites/:path*/',
         destination: 'https://consulsoken.com/:path*/',
       }
