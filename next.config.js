@@ -11,6 +11,7 @@ module.exports = {
     // Will be available on both server and client
     NEXT_PUBLIC_API_URL: "desk-items-api.internal"
   },
+  trailingSlash: true,
   async redirects() {
     return [
       {
@@ -22,6 +23,10 @@ module.exports = {
   },
   async rewrites() {
     return [
+      {
+        source: '/rewrites',
+        destination: 'https://consulsoken.com/',
+      },
       {
         source: '/rewrites/:path*/',
         destination: 'https://consulsoken.com/:path*/',
